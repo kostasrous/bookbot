@@ -1,12 +1,18 @@
 from stats import word_counter
 from stats import symbol_counter
 from stats import report
+import sys
+if len(sys.argv) < 2 :
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
 def get_book_text(file_path):
     with open(file_path,"rt",encoding="utf-8") as f:
         file_contents = f.read()
     return file_contents
 def main():
-    file = "books/frankenstein.txt"
+    file = str(sys.argv[1])
+    #file = "books/frankenstein.txt"
     counter = symbol_counter(get_book_text(file))
     the_report = report(counter)
     print("============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt...")
