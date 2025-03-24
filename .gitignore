@@ -1,6 +1,5 @@
 #ignore books
 /books
 #ignore
-__pycache__
-.idea
-.gitignore
+/__pycache__
+/.idea
